@@ -17,10 +17,7 @@ O objetivo é demonstrar o funcionamento de um sistema de sinalização luminosa
 | Amarelo    | 5            | 220 Ω    | Representa “atenção” |
 | Vermelho   | 8            | 220 Ω    | Representa “pare”    |
 
-### Esquema de ligação
 
-Cada LED está conectado ao seu respectivo pino digital através de um **resistor** (para limitar a corrente e evitar danos ao LED).  
-O **catodo (perna menor)** de cada LED está ligado ao **GND** da protoboard.
 
 ---
 
@@ -35,7 +32,7 @@ O **catodo (perna menor)** de cada LED está ligado ao **GND** da protoboard.
 | Resistor       | 3          | 220 Ω                 | Limita corrente dos LEDs           |
 | Protoboard     | 1          | 830 pontos            | Montagem do circuito               |
 | Jumpers (fios) | Vários     | Macho-macho           | Conexão entre Arduino e protoboard |
-
+|Jumpers (fios) | 6 | Macho-femea | Conexão entre led e protoboard |
 ---
 
 ## Código do Semáforo (POO)
@@ -157,12 +154,22 @@ void loop() {
 
 <br>
 <p align="center">
-  <img src="../assets/semafarotinkercad.png" alt="Semáforo Tinkercad" width="700"/>
+  <img src="../assets/semafarotinkerkard.png" alt="Semáforo Tinkercad" width="700"/>
 </p>
 <br>
 
+---------
+
 ### Explicação 
 
-Como podemos ver temos 3 leds conectados a protoboard sendo eles o vermelho, amarelo e verde. Cada led está conectado a um resistor de 220 ohms e o catodo de cada led está conectado ao GND da protoboard. O anodo de cada led está conectado a um pino digital do arduino. O pino digital 8 está conectado ao led vermelho, o pino digital 5 está conectado ao led amarelo e o pino digital 2 está conectado ao led verde.
+Como podemos ver temos 3 leds conectados cada um individualmente a 2 cabos macho e femea, sendo eles o vermelho, amarelo e verde. Cada led está conectado a um resistor de 220 ohms e o catodo de cada led está conectado ao GND da protoboard. O anodo de cada led está conectado a um pino digital do arduino. O pino digital 8 está conectado ao led vermelho, o pino digital 5 está conectado ao led amarelo e o pino digital 2 está conectado ao led verde.
 
 e para o funcionamento do semaforo temos o codigo acima que controla os leds e os tempos de cada fase.
+
+----------
+
+### Esquema de ligação
+
+Cada LED está conectado ao seu respectivo pino digital através de um **resistor** (para limitar a corrente e evitar danos ao LED) e a conexão é feita via jumpers macho e femea para o anodo do led.  
+O **catodo (perna menor)** de cada LED está ligado ao **GND** da protoboard via jumper macho e femea ligada ao catodo do led, assim deixando o led individualmente conectado e suspenso a protoboard.
+
