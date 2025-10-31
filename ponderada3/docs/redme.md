@@ -38,6 +38,7 @@ O objetivo é demonstrar o funcionamento de um sistema de sinalização luminosa
 ## Código do Semáforo (POO)
 
 ```cpp
+c// Classe Semaforo
 class Semaforo {
   private:
     int pinoVermelho;
@@ -45,6 +46,7 @@ class Semaforo {
     int pinoVerde;
 
   public:
+    // Construtor
     Semaforo(int vermelho, int amarelo, int verde) {
       pinoVermelho = vermelho;
       pinoAmarelo = amarelo;
@@ -55,6 +57,7 @@ class Semaforo {
       pinMode(pinoVerde, OUTPUT);
     }
 
+    // Métodos
     void vermelho() {
       digitalWrite(pinoVermelho, HIGH);
       digitalWrite(pinoAmarelo, LOW);
@@ -83,13 +86,19 @@ class Semaforo {
     }
 };
 
-Semaforo semaforoPrincipal(8, 5, 2);
+// Criação do ponteiro
+Semaforo* semaforoPrincipal = nullptr; // Ponteiro para objeto Semaforo
 
-void setup() {}
+void setup() {
+  // Cria dinamicamente o objeto Semaforo e guarda o endereço no ponteiro
+  semaforoPrincipal = new Semaforo(8, 5, 2);
+}
 
 void loop() {
-  semaforoPrincipal.iniciarCiclo();
+  // Usa o operador "->" para acessar métodos via ponteiro
+  semaforoPrincipal->iniciarCiclo();
 }
+
 ```
 
 ---
@@ -173,3 +182,23 @@ e para o funcionamento do semaforo temos o codigo acima que controla os leds e o
 Cada LED está conectado ao seu respectivo pino digital através de um **resistor** (para limitar a corrente e evitar danos ao LED) e a conexão é feita via jumpers macho e femea para o anodo do led.  
 O **catodo (perna menor)** de cada LED está ligado ao **GND** da protoboard via jumper macho e femea ligada ao catodo do led, assim deixando o led individualmente conectado e suspenso a protoboard.
 
+
+## Versão fisica 
+
+<br>
+<p align="center">
+  <img src="../assets/Imagem do WhatsApp de 2025-10-31 à(s) 11.31.52_06d1c415.jpg" alt="Semáforo Tinkercad" width="300"/>
+</p>
+<br>
+
+<br>
+<p align="center">
+  <img src="../assets/Imagem do WhatsApp de 2025-10-31 à(s) 11.31.58_7d208624.jpg" alt="Semáforo Tinkercad" width="300"/>
+</p>
+<br>
+
+
+### OBS:
+
+Nada foi alterado na fisica, apenas foi adicionado um resistor de 220 ohms em cada led para limitar a corrente e evitar danos ao led. 
+a codição de organização fisica tambem não ficou tão boa.
