@@ -191,11 +191,16 @@ O **catodo (perna menor)** de cada LED está ligado ao **GND** da protoboard via
 </p>
 <br>
 
+----
+
 <br>
 <p align="center">
   <img src="../assets/Imagem do WhatsApp de 2025-10-31 à(s) 11.31.58_7d208624.jpg" alt="Semáforo Tinkercad" width="300"/>
 </p>
 <br>
+
+### Link do video:
+[Visite o video da atividade](https://drive.google.com/file/d/1yJIkYknmAZNpArU6hLd5_A8Tq8ItN92y/view?usp=sharing))
 
 
 ### OBS:
